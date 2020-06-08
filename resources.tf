@@ -49,11 +49,11 @@ resource "aws_instance" "ssh-gw" {
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.sg.name]
   key_name        = "ssh-gw-key"
+  user_data       = file("./boot.sh")
   tags = {
     Name = "HelloWorld"
   }
 }
-
 
 output "ip_address" {
   value = aws_instance.ssh-gw.public_ip
