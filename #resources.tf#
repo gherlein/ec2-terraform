@@ -54,6 +54,8 @@ resource "aws_instance" "ssh-gw" {
   }
 }
 
+
+
 output "ip_address" {
   value = aws_instance.ssh-gw.public_ip
 }
